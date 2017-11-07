@@ -1,0 +1,79 @@
+/*selektor uniwersalny, ;lapie wszystkie elementy na stronie*/
+* {
+    font-size:22px
+}
+body {
+    margin: 0;
+}
+
+/*selektor znacznika, lapie wszystkie okreslone znaczniki na stronie*/
+p {
+    font-size:16px;
+}
+/*selektor indentyfikatora (nazwa id) lapie element o okreslonym id*/
+#universal {
+    background-color: grey;
+}
+/*selektor klasy lapie elementy o okreslonym atrybucie class*/
+.class-selektor {
+    background-color:beige;
+}
+/*mozemy laczyc selektor identyfikatora z selektorem klasy*/
+#universal.blue {
+    background-color: blue;
+}
+/*selektor bezposredniego potomka(ze znakiem>) lapie elementy zagniezdzone BEZPOSREDNIO w elemencie*/
+.potomek > p {
+    font-size:30px;
+    text-align: center;
+}
+/*selektor potomka (ze spacja) zlapie wszystkie elementy zagniezdzone */
+.potomek p {
+    font-size: 20px;
+}
+/*selektor bezposredniego rodzenstwa (znak +) lapie pierwsze wystapienie selektora na TYM SAMYM poziomie zagniezdzenia*/
+.bezposrednie-rodzenstwo h2 + p {
+    color:violet;
+}
+/*selektor rodzenstwa (znak ~) zlapieWSZYSTKIE WYSTAPIENIA elektora na TYM SAMYM poziomie zagniezdzenia*/
+.bezposrednie-rodzenstwo h2 ~ p {
+    color:red;
+}
+/*pozycjonowanie elementów*/
+#pozycjonowanie { 
+    height: 400px;
+    background-color: green;
+    position: relative;
+        
+    }
+/*pozycja relatywna zachowuje miejsce elementu, odsuwa element od elementu nadrzednego*/
+
+
+/*element pozycjonowany absolutnie ustawia sie wzgledm elementu nadrzednego, ktory jest pozycjonowany RELATYWNIE. Jezeli element nadrzedny nie jest pozycjonowany RELATYWNIE, to zawsze bedzie ustawial sie ABSOLUTNIE wzgledem BODY. Dodatkowo, element pozycjonowany ABSOLUTNIE, NIE ZACHOWUJE MIEJSCA*/
+
+/*Jezeli zmienimy elementowi blokowemu wlasciwosc position na absolut lu fixed, to musimy pamietac o tym, aby taki blok rozciagnac ponownie na 100% szerokosci*/
+#pozycjonowanie .red{
+    background-color: red;
+    position:absolute;
+    top:20px;
+    left: 30px;
+}
+#pozycjonowanie .blue {
+    background-color: blue;
+    
+}
+#pozycjonowanie .inner p {
+    margin:0;
+    color:white;
+
+}
+#main-nav {
+    background-color: aquamarine;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+#main-nav ul {
+    margin: 0;
+}
